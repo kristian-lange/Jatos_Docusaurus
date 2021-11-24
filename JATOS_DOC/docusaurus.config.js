@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
+  title: 'JATOS',
+  tagline: 'Just Another Tool for Online Studies',
+  url: 'https://jatos-test.org',
   baseUrl: '/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'jatos', // Usually your GitHub org/user name.
+  projectName: 'jatos_docusaurus', // Usually your repo name.
 
   presets: [
     [
@@ -43,24 +43,24 @@ const config = {
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: 'My Site',
+        title: 'JATOS',
         logo: {
-          alt: 'My Site Logo',
-          src: 'img/logo.svg',
+          alt: 'JATOS Logo',
+          src: 'img/logo.png',
         },
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'overview/Whats-JATOS',
             position: 'left',
-            label: 'Tutorial',
+            label: 'Documentation',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
-          {
-            href: 'https://github.com/facebook/docusaurus',
-            label: 'GitHub',
-            position: 'right',
-          },
+          {href: 'https://github.com/JATOS/JATOS/releases/tag/v3.6.1', label: 'Download', position: 'right'},
+          {to: '/Example-Studies', label: 'Example Studies', position: 'left'},
+          {to: '/Contact', label: 'Contact', position: 'left'},
+          {type: 'docsVersionDropdown'},
+          {href: 'http://blog.jatos.org/', label: 'Blog', position: 'right'},
+          {href: 'https://github.com/facebook/docusaurus', label: 'GitHub', position: 'right'}
         ],
       },
       footer: {
@@ -70,8 +70,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Documentation',
+                to: '/docs/overview/Whats-JATOS',
               },
             ],
           },
