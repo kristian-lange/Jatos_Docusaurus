@@ -3,8 +3,12 @@ sidebar_position: 8
 ---
 
 ### When to use the sessions?
+
+<div style={{float: 'right'}}>
+
 ![](../../../static/img/three_session_types.png)
-<!-- <img align="right" src="mig/three_session_types.png"> -->
+
+</div>
 
 Often you want to store information during a study run and share it with other components of the same study, or between workers of a group or batch. The three different session types let you transfer data in this way (shown by the curved arrows in the picture on the right). Workers can write into the sessions through jatos.js.
 
