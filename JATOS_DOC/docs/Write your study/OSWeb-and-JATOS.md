@@ -2,7 +2,11 @@
 sidebar_position: 6
 ---
 
-{% include image.html file="OSweb_logo.png" alt="Logo" caption="" max-width="300" %}
+<div style={{'float':'right', 'width':'300px'}}>
+
+![](../../static/img/OSweb_logo.png)
+
+</div>
 
 OSWeb lets you run an [OpenSesame](https://osdoc.cogsci.nl) experiment on a browser. OpenSesame is a pretty neat program to create experiments for psychology, neuroscience, and experimental economics. You can get very far with drag-and-drop, and there's the chance to add code snippets if you need more flexibility. 
 

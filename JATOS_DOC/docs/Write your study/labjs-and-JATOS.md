@@ -2,7 +2,11 @@
 sidebar_position: 5
 ---
 
+<div style={{'float':'right', 'width':'200px'}}>
+
 ![](../../static/img/labjs_logo.png)
+
+</div>
 
 [lab.js](https://lab.js.org/) is an easy to use tool to create online experiments. Their [Builder](https://labjs.felixhenninger.com/) makes creating an online experiment a piece of cake - although you can also write code yourself: lab.js supports this too.
 
