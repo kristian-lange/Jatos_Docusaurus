@@ -6,7 +6,7 @@ sidebar_position: 8
 
 <div style={{float: 'right'}}>
 
-![](../../static/img/three_session_types.png)
+![](/img/three_session_types.png)
 
 </div>
 

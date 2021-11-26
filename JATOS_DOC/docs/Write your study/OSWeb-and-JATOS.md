@@ -4,7 +4,7 @@ sidebar_position: 6
 
 <div style={{'float':'right', 'width':'300px'}}>
 
-![](../../static/img/OSweb_logo.png)
+![](/img/OSweb_logo.png)
 
 </div>
 

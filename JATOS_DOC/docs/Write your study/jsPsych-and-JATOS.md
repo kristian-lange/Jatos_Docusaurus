@@ -4,7 +4,7 @@ sidebar_position: 4
 
 <div style={{'float':'right', 'width':'300px'}}>
 
-![](../../static/img/jspsych-logo.png)
+![](/img/jspsych-logo.png)
 
 </div>
 
