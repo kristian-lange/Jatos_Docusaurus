@@ -5,7 +5,7 @@ sidebar_position: 1
 
 Since JATOS v3.6.1 JATOS includes an _Administration_ page. Here [users with admin rights](/User-Manager.html) can get an overview of the studies and users of a JATOS installation. You can see the **logs**, **system info**, or go to the **test page** to check if JATOS runs correctly. It is also the place where **update notifications** appear when a new JATOS version is available and where [admins can trigger an update](/Update-JATOS.html#automatic-updates).
 
-![Administration screenshot](../../static/img/Screenshot_Administration1.png)
+![Administration screenshot](/img/Screenshot_Administration1.png)
 
 On the menu you will find links to two additional administration pages: 
 
@@ -20,7 +20,7 @@ By clicking the _Studies_ button you'll get to an overview about all studies tha
 
 **For larger JATOS installation it can take up to a couple minutes to gather all data for this page**
 
-![Studies Administration](../../static/img/Screenshot_Study_Admin1.png)
+![Studies Administration](/img/Screenshot_Study_Admin1.png)
 
 The information is displayed in a table with the columns:
 

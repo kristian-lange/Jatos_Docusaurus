@@ -29,7 +29,7 @@ But first some general advice:
    
    The output should look similar to this:
 
-   ![ngrok screenshot](../../../static/img/screenshot_ngrok.png)
+   ![ngrok screenshot](/img/screenshot_ngrok.png)
    
 1. Copy & Paste the URL with _https_ to your browser and check that JATOS is running properly with JATOS' build-in [tests](/Troubleshooting.html#jatos-test-page).
 

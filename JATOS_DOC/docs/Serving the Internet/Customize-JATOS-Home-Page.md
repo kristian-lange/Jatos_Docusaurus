@@ -17,7 +17,7 @@ You can customize JATOS' home page to e.g.
 * add some introduction text, or
 * announce an upcoming event. 
 
-![template customized home page](../../static/img/screenshot-branding.png)
+![template customized home page](/img/screenshot-branding.png)
 
 This is done by configuring JATOS with an URL that points to some static HTML that describes your individual welcome block. This HTML block will then be loaded and displayed in every home page.
 

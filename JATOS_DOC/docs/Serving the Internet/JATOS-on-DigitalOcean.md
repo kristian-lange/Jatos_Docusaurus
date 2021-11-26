@@ -18,7 +18,7 @@ First we want to set up a simple JATOS server without encryption (HTTPS) or a do
 
 1. Use this [link](https://cloud.digitalocean.com/droplets/new?image=docker-18-04) to create a Droplet with _Docker_ on _Ubuntu_ pre-installed. Do not press _Create_ yet - we need to set up things first.
 
-   ![Selected Marketplace with Docker on Ubuntu](../../static/img/Screenshot-DigitalOcean-createDroplet-oneClickApp.png)
+   ![Selected Marketplace with Docker on Ubuntu](/img/Screenshot-DigitalOcean-createDroplet-oneClickApp.png)
    
    Your sreen should look similar to this one: Selected _Marketplace_ (was One-Click App in past) with _Docker_ on _Ubuntu_ (currently it's called _Docker 18.06.1-ce-3 on 18.04_)
    
@@ -35,7 +35,7 @@ First we want to set up a simple JATOS server without encryption (HTTPS) or a do
    docker run -d --restart=always -p 80:9000 jatos/jatos:latest
    ```
    
-   ![Droplet's User Data](../../static/img/Screenshot-DigitalOcean-createDroplet-userData.png)
+   ![Droplet's User Data](/img/Screenshot-DigitalOcean-createDroplet-userData.png)
    
    The _User Data_ should look similar to this screenshot here
 

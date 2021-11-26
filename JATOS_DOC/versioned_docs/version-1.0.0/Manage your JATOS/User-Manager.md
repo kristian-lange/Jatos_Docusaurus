@@ -14,13 +14,13 @@ JATOS comes with one **Admin user** out-of-box (username: 'admin'). Admin always
 
 Every user can be granted admin rights, by checking the corresponding box either during creation or in the _Admin_ column of the table. Only admins can access the _Administration_ pages (like _User Manager_ or _Study Info_).
 
-![User manager screenshot](../../../static/img/Screenshot_User_Manager1.png)
+![User manager screenshot](/img/Screenshot_User_Manager1.png)
 
 Since v3.6.1: A user can be **deactivated** (and activated again) by clicking the checkbox in the 'Active' column. A deactivated user cannot log in anymore but their studies can still be run by participants (to prevent a study from running, deactivate it in the study _Administration_ page).
 
 Since v3.6.1: If you're an admin and need to get more information about a user's studies, click on the _Studies_ column. You'll see _Result Data Size_ and _Result File size_, which can give you an idea of how many of the server's resources this user needs.
 
-![User manager screenshot](../../../static/img/Screenshot_User_Manager2.png)
+![User manager screenshot](/img/Screenshot_User_Manager2.png)
 
 Since v3.6.1: Clicking on the _Export_ button on the top of the page, you can export user data in CSV format. This is useful to e.g. get a list of emails if you need to notify all users about a server downtime, JATOS update, etc.   
 

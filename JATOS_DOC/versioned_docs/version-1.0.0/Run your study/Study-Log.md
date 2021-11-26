@@ -6,11 +6,11 @@ From version 3.2.1 onwards JATOS stores a log file for each study (not to be con
 
 You can see the log by clicking on **More** in the study toolbar and then **Study Log**:
 
-![Study Log button](../../../static/img/study_log_button.png)
+![Study Log button](/img/study_log_button.png)
 
 Then the log looks similar to this:
 
-![Study Log pretty](../../../static/img/study_log_pretty.png)
+![Study Log pretty](/img/study_log_pretty.png)
 
 **A few more details:**
 * The study log won't be necessary in most cases. Just nice to have. Just in case.
@@ -20,5 +20,5 @@ Then the log looks similar to this:
 * The study log is only as safe as the server machine on which JATOS is running. Anybody with access to the server can potentially modify the study log file and e.g. hide that data has been deleted. We can't prevent this, so it's important to have a safe server that only admins can access.
 * The study log is in JSON format. Choose between **pretty** (like in the screenshot above) or **raw** (in the one below). 
 
-![Study Log raw](../../../static/img/study_log_raw.png)
+![Study Log raw](/img/study_log_raw.png)
 

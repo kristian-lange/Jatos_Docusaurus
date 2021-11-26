@@ -4,7 +4,7 @@ sidebar_position: 5
 
 <div style={{'float':'right', 'width':'200px'}}>
 
-![](../../../static/img/labjs_logo.png)
+![](/img/labjs_logo.png)
 
 </div>
 

@@ -6,7 +6,7 @@ It is very easy to use JATOS together with [Prolific](https://www.prolific.co/) 
 
 This is what the _New Study_ page in Prolific looks like:
 
-![Prolific screenshot](../../../static/img/Screenshot_Prolific_create_study.png)
+![Prolific screenshot](/img/Screenshot_Prolific_create_study.png)
 
 
 ### 1. Enter your JATOS study link
@@ -18,7 +18,7 @@ In the field under _What is the URL of your study?_ (first red box in the screen
 
 Prolific allows you to pass the parameters PROLIFIC PID, STUDY ID, and SESSION ID as URL parameters. Click on 'Show advanced' and then 'Add parameters' like in the screenshot.
 
-![Prolific screenshot](../../../static/img/Screenshot_Prolific_query_parameter.png)
+![Prolific screenshot](/img/Screenshot_Prolific_query_parameter.png)
 
 Then you can access those URL parameters in your study's JavaScript via [jatos.urlQueryParameters](jatos.js-Reference.html#original-url-query-parameters).
 
@@ -57,7 +57,7 @@ The second red box contains a link that will (re)direct the participant to a Pro
 
    In JATOS GUI you can put the in Prolific link in the **End Redirect URL** field of your Study Properties
 
-   ![screenshot](../../../static/img/Screenshot_end-redirect-url.png)
+   ![screenshot](/img/Screenshot_end-redirect-url.png)
 
 1. Include [`jatos.endStudyAndRedirect`](jatos.js-Reference.html#jatosendstudyandredirect) in the JavaScript of your **last** component (**since JATOS v3.5.1**)
 

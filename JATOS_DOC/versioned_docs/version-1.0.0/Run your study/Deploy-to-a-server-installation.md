@@ -10,7 +10,7 @@ If you have a server already, you will need to take your ready-to-run study from
 1. On your *server* installation, simply click Import. 
 
 Here's a little sketch of the same three steps above
-![jzip workflow](../../../static/img/jzipWorkflow.png)
+![jzip workflow](/img/jzipWorkflow.png)
 
 If you have trouble with the export and you are using a Safari browser have a look into [this issue in our Troubleshooting section](Troubleshooting.html#downloading-a-study--exporting-a-study-fails-eg-in-safari-browsers).
 
