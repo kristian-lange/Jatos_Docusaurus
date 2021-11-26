@@ -1,7 +1,8 @@
 ---
 sidebar_position: 1
 ---
-## Something updated in  this version
+
+## This is in new version
 JATOS (Just Another Tool for Online Studies) helps you set up and run your online studies on your own server.
 
 **New: [MindProbe](https://mindprobe.eu/), a free server for hosting online experiments. Powered by JATOS. Sponsored by the [European Society for Cognitive Psychology (ESCoP)](https://www.escop.eu/) with [Journal of Cognition](https://www.journalofcognition.org/) as their official journal and [OpenSesame](https://osdoc.cogsci.nl/).**
