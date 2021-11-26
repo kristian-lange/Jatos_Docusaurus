@@ -2,6 +2,12 @@
 sidebar_position: 4
 ---
 
+<div style={{'float':'right', 'width':'300px'}}>
+
+![](../../../static/img/jspsych-logo.png)
+
+</div>
+
 JATOS basically cares for the server side: it stores result data, does worker management etc. JATOS doesn't care so much for what happens in the browser itself - your HTML, JavaScript and CSS. Of course you can write this all yourself, but you could also use a framework for this. A very good one is [jsPsych](http://www.jspsych.org/).
 
 In [our example studies](Example-Studies.html) are a couple of jsPsych ones.
