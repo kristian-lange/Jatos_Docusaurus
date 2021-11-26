@@ -1,13 +1,6 @@
 ---
 title: Update JATOS
-keywords: update, upgrade, release, install
-tags:
-summary:
-sidebar: mydoc_sidebar
-permalink: Update-JATOS.html
-folder:
-toc: true
-last_updated: 24 Jun 2021
+sidebar_position: 3
 ---
 
 **If you want to update a JATOS server please read [this page](/Updating-a-JATOS-server-installation.html) first.**
@@ -25,13 +18,13 @@ The process is pretty self-explanatory, but anyway, we'll explain it here in det
 
 1. If your JATOS version is not the latest one available, you will get a notification on your JATOS' _Administration_ page (or in your JATOS' home page in older versions).
 
-   ![Update notification Schreenshot](images/autoupdate-notification.png)
+   ![Update notification Schreenshot](../../../static/img/autoupdate-notification.png)
 
 1. We expect no problems, but sh&t happens. We recommend that you **back up your result data, result files, study assets folder and study logs** before continuing.
 1. Click on _Update_, confirm that you want to continue and the latest JATOS version will be downloaded from GitHub and saved in your system's temporary folder. Usually the variant downloaded will be the one without bundled Java. Only in cases where JATOS switches to a newer version of Java a bundled version is required [(see below)](#Versions-with-newer-Java-required). The download might take a while depending on your internet connection.
 1. After download is complete, you will be asked again for confirmation. By default, JATOS will **back up**: it will copy the content of its own installation folder into a folder with the name _backup_x.x.x_ (x.x.x is the version before the update). This will usually include your embedded H2 database, your study assets and logs - **but not your MySQL database** (should you have one). If anything goes wrong in the auto-update, you have everything in this backup folder to start the old JATOS again. This backup will use up disk space (therefore you can opt out).
 
-   ![Update notification Schreenshot](images/autoupdate-update-and-restart.png)
+   ![Update notification Schreenshot](../../../static/img/autoupdate-update-and-restart.png)
 
 1. After clicking the _Go on_ button, JATOS will stop itself, replace its program files and re-start itself again. This might take up to a minute.
 1. Refresh your JATOS home page every now and then until you see your updated JATOS' login screen again.

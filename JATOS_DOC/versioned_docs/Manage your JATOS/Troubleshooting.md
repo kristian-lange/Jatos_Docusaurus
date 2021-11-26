@@ -1,13 +1,6 @@
 ---
 title: Troubleshooting
-keywords: troubleshooting, logging, log, test, error, fail
-tags:
-summary:
-sidebar: mydoc_sidebar
-permalink: Troubleshooting.html
-folder:
-toc: true
-last_updated: 24 Jun 2021
+sidebar_position: 4
 ---
 
 ### JATOS test page
@@ -28,13 +21,13 @@ This will happen if your computer crashed before you had the chance to close JAT
 
 This is what you might see on a Mac Terminal if JATOS doesn't start:
 
-![jatos doesn't start](images/shell_start1.png)
+![jatos doesn't start](../../../static/img/shell_start1.png)
 
 Close any open command prompt windows. Then look into your JATOS folder, and check if there's a file called `RUNNING_PID`. Delete this file and try to start JATOS again. 
 
 Here is how it should look if JATOS started successfully:
 
-![jatos doesn't start](images/shell_start2.png)
+![jatos doesn't start](../../../static/img/shell_start2.png)
  
 
 ### Read log file in the browser
