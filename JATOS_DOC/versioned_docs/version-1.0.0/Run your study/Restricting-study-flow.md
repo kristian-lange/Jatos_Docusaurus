@@ -21,7 +21,7 @@ Let's first say what we understand under the _study flow_:
 
 A worker can press their browser's reload button and by default JATOS will respond with the same component again: by default, the worker can do a component multiple times. To prevent this each component properties has a checkbox _Allow reload_.
 
-![GUI Screenshot](../../../static/img/component-properties-reload.png)
+![GUI Screenshot](/img/component-properties-reload.png)
 
 If you want to prevent this behaviour uncheck the box. If a participant reloads the page, they will see an error message. Then the study run will be finished and put to state FAIL. Since each component properties has their own _Allow reload_ checkbox it can be defined differently for each component, e.g. reloading is allowed in the introduction but is prohibited in the actual experiment.
 
@@ -34,7 +34,7 @@ If you want to prevent this behaviour uncheck the box. If a participant reloads 
 
 A worker can press their browsers back button and by default JATOS will response with the previous component, the one that was done before by the worker. This might allow a worker to divert from the intended study flow. To prevent this each study properties has a checkbox _Linear study flow_.
 
-![Study Properties Screenshot](../../../static/img/study-properties-linear-flow.png)
+![Study Properties Screenshot](/img/study-properties-linear-flow.png)
 
 If you want to enforce a linear study flow check the box. Then, if a participant tries to go backwards in their browser, they will see an error message instead. The study run will be finished and put to state FAIL.
 
@@ -60,7 +60,7 @@ Perhaps you want to allow **General Single** or **Personal Single** workers to h
 
 To allow them to do this, activate the checkbox **Allow preview** (this will add a `&pre` to the end of the URL).
 
-![GUI Screenshot](../../../static/img/preview_general_single_run.png)
+![GUI Screenshot](/img/preview_general_single_run.png)
 
 Now your workers can use the link as many times as they want - as long **as they don't go further than the first component**. But once the second component is started, JATOS will restrict access to the study in the usual way as it is for General Single and Personal Single workers. This means that they will get an error if they try to use the link again to access the study.
 

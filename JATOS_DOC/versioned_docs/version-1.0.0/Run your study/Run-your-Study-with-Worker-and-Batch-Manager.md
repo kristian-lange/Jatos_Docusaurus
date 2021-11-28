@@ -6,7 +6,7 @@ sidebar_position: 2
 
 The Worker & Batch Manager is the place where you generate links for your particpants to run the your study, organize them into Batches and handle their results.
 
-![Worker & Batch manager screenshot](../../../static/img/worker_and_batch_manager1.png)
+![Worker & Batch manager screenshot](/img/worker_and_batch_manager1.png)
 
 _This is a screenshot of JATOS v3.3.1. In earlier versions it was called Batch Manager and looked a bit simpler. Each row represents a batch which in turn is a collection of workers._
 
@@ -22,7 +22,7 @@ Click on the "<span class="glyphicon glyphicon-chevron-right"></span>" button in
 
 ### Worker Setup
 
-![Worker Setup](../../../static/img/worker_and_batch_manager2.png)
+![Worker Setup](/img/worker_and_batch_manager2.png)
 
 _Screenshot of a Worker & Batch Mangager with an open Worker Setup for the second batch. In JATOS version < 3.3.1 it is reachable via the "Worker Setup" button._
 
@@ -42,13 +42,13 @@ Alternatively there is a "**Get Worker Links <span class="glyphicon glyphicon-li
 
 Click on the "<span class="glyphicon glyphicon-chevron-right"></span>" button in the left in each worker type row to expand it and see all generated workers. The column "Study State" indicates in which [state](Manage-Results.html#state) this study run currently is.
 
-![Worker Table](../../../static/img/worker_and_batch_manager4.png)
+![Worker Table](/img/worker_and_batch_manager4.png)
 
 _Screenshot with expanded Personal Single Worker_
 
 Another way to see your workers is the button "**All Workers**" in the top of the Worker & Batch Manager page.
 
-![All Workers Table](../../../static/img/worker_and_batch_manager6.png)
+![All Workers Table](/img/worker_and_batch_manager6.png)
 
 _Screenshot of All Workers table: Here one can search and filter through all workers of all batches and all types that belong to this study._
 
@@ -67,7 +67,7 @@ You can **deactivate** or **activate** a batch by clicking on the checkbox butto
 
 For each batch, you can limit the maximum number of workers that will ever be able to run a study in this batch by setting the **Maximum Total Workers**.
 
-![Worker & Batch manager screenshot](../../../static/img/batch_properties.png)
+![Worker & Batch manager screenshot](/img/batch_properties.png)
 
 Additionally you can switch on or off worker types in the **Allowed Worker Types**. Unchecked worker types are not allowed to run a study. Always check before you send out links to study runs that the corresponding worker types are switched on.
 
@@ -77,6 +77,6 @@ The **Group Properties** relate to [group studies](Write-Group-Studies-I-Setup.h
 
 A batch is also the place where [JATOS groups](Write-Group-Studies-I-Setup.html) are handled. Here you can an get an overview of the Groups that belong to this batch: see what their member workers are or edit the **Group Session Data**.
 
-![Groups table](../../static/img/groups view.png)
+![Groups table](/img/groups view.png)
 
 _Screenshot of a Groups table (available JATOS >= 3.3.1): "Active Workers" are the workers that are currently members in the group, "Past Workers" the ones that were members at one point in the past. "Results" shows only the study results that belong to this group. "Group State" can be START, FINISHED, or FIXED._
