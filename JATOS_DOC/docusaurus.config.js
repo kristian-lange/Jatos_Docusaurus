@@ -55,12 +55,38 @@ const config = {
             position: 'left',
             label: 'Documentation',
           },
-          {href: 'https://github.com/JATOS/JATOS/releases/tag/v3.6.1', label: 'Download', position: 'right'},
-          {to: '/Example-Studies', label: 'Example Studies', position: 'left'},
-          {to: '/Contact', label: 'Contact', position: 'left'},
+          {
+            to: '/Example-Studies',
+            label: 'Example Studies',
+            position: 'left'
+          },
+          {
+            type: 'doc',
+            docId: 'overview/Contact-us',
+            position: 'left',
+            label: 'Contact'
+          },
           {type: 'docsVersionDropdown'},
-          {href: 'http://blog.jatos.org/', label: 'Blog', position: 'right'},
-          {href: 'https://github.com/facebook/docusaurus', label: 'GitHub', position: 'right'}
+          {
+            href: "https://buymeacoffee.com/jatos",
+            label: "Buy me a coffee",
+            position: "right",
+          },
+          {
+            href: 'https://github.com/JATOS/JATOS/releases/latest',
+            label: 'Download',
+            position: 'right'
+          },
+          {
+            href: 'http://blog.jatos.org/',
+            label: 'Blog',
+            position: 'right'
+          },
+          {
+            href: 'https://github.com/JATOS/JATOS',
+            label: 'GitHub',
+            position: 'right'
+          }
         ],
       },
       footer: {
