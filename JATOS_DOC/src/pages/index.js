@@ -29,9 +29,19 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
-      <HomepageHeader />
+      title={`${siteConfig.title}`}
+      description={`${siteConfig.tagline}`}>
+      <header>
+        <div className="container">
+          <div className="center">
+            <img src="/img/jatos_logo_color.svg" />
+          </div>
+          <div className="header-text">  
+            <h1>{siteConfig.title}</h1>
+            <p>{siteConfig.tagline}</p>
+          </div>
+        </div>
+      </header>
       <main>
         <HomepageFeatures />
       </main>

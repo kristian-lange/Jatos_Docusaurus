@@ -26,3 +26,22 @@
 html[data-theme='dark'] .docusaurus-highlight-code-line {
   background-color: rgba(0, 0, 0, 0.3);
 }
+
+.main-wrapper .container {
+  text-align: center;
+  padding-top: 6rem;
+}
+
+.main-wrapper .header-text {
+  padding-top: 2rem;
+}
+
+.main-wrapper .header-text h1 {
+  font-size: 3rem;
+}
+
+.main-wrapper .center {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}

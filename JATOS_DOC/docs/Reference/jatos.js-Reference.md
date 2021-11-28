@@ -2,158 +2,247 @@
 title: jatos.js Reference
 ---
 
-jatos.js is a JavaScript library that helps you to communicate from your component's JavaScript with your JATOS server. Below we list and describe the variables and functions of the jatos.js library.
+## Introduction
 
-Always load the jatos.js script in the `<head>` section with the following line:
+_jatos.js_ is a JavaScript library that helps you to communicate from your component's JavaScript with your JATOS server. Below we list and describe the variables and functions of the _jatos.js_ library.
+
+Always load _jatos.js_ in the `<head>` section with the following line:
 
 ```
 <script src="jatos.js"></script>
 ```
 
-All variables or calls to jatos.js start with `jatos.`. For example, if you want to get the study's ID you use `jatos.studyId`. 
+All _jatos.js_ variables or functions start with `jatos.`. For example, if you want to get the study's ID you use `jatos.studyId`. 
+
+Most _jatos.js_ variables or functions only work after _jatos.js_ is initialized (`jatos.onLoad()` will be called).
 
 And, please, if you find a mistake or have a question don't hesitate to [contact us](Contact-us.html).
 
 
-## jatos.js variables
+## ID variables
 
-You can call any of these variables below at any point in your HTML file after jatos.js finished initializing (`jatos.onLoad()` will be called). Most variables are read-only. A few variables can be written into (e.g. `jatos.httpTimeout`). Those are marked '(writeable)'.
+All those IDs are generated and stored by JATOS. _jatos.js_ automatically sets these variables with the corresponding values if you included the `jatos.onLoad()` callback function at the beginning of your JavaScript.
+
+There's a convenient function that adds most of these IDs to a given object. See function `jatos.addJatosIds(obj)` below.
+
+### `jatos.studyId`
+
+ID of the study which is currently running. All the study properties are associated with this ID.
+
+### `jatos.componentId`
+
+ID of the component which is currently running. All the component properties are associated with this ID.
+
+### `jatos.batchId`
+
+ID of the batch this study run belongs to. All batch properties are associated with this ID.
+
+### `jatos.workerId`
+
+Each worker who is running a study has an ID.
+
+### `jatos.studyResultId`
+
+This ID is individual for every study run. A study result contains data belonging to the run in general (e.g. Study Session).
+
+### `jatos.componentResultId`
+
+This ID is individual for every component in a study run. A component result contains data of the run belonging to the specific component (e.g. result data).
+
+### `jatos.groupMemberId`
+
+see [Group Variables](#group-variables)
+
+### `jatos.groupResultId`
+
+see [Group Variables](#group-variables)
 
 
-### IDs
+## Study variables
 
-All those IDs are generated and stored by JATOS. jatos.js automatically sets these variables with the corresponding values if you included the `jatos.onLoad()` callback function at the beginning of your JavaScript.
+### `jatos.studyProperties`
 
-* `jatos.studyId` - ID of the study which is currently running. All the study properties are associated with this ID.
-* `jatos.componentId` - ID of the component which is currently running. All the component properties are associated with this ID.
-* `jatos.batchId` - ID of the batch this study run belongs to. All batch properties are associated with this ID.
-* `jatos.workerId` - Each worker who is running a study has an ID.
-* `jatos.studyResultId` - This ID is individual for every study run. A study result contains data belonging to the run in general (e.g. Study Session).
-* `jatos.componentResultId` - This ID is individual for every component in a study run. A component result contains data of the run belonging to the specific component (e.g. result data).
-* `jatos.groupMemberId` - see [Group Variables](#group-variables)
-* `jatos.groupResultId` - see [Group Variables](#group-variables)
+All the properties (except the JSON input data) you entered for this study
 
-There's a convenient function that adds all these IDs to a given object. See function `jatos.addJatosIds(obj)` below.
+* `jatos.studyProperties.title` - Study's title
+* `jatos.studyProperties.uuid` - Study's UUID
+* `jatos.studyProperties.description` - Study's description
+* `jatos.studyProperties.descriptionHash` - Hash of study's description
+* `jatos.studyProperties.locked` - Whether the study is locked or not
+* `jatos.studyProperties.dirName` - Study's dir name in the file system of your JATOS installation
+* `jatos.studyProperties.groupStudy` - Whether this is a group study or not
 
+### `jatos.studyJsonInput`
 
-### Study variables
+The JSON input you entered in the study's properties.
 
-* `jatos.studyProperties` - All the properties (except the JSON input data) you entered for this study
-  * `jatos.studyProperties.title` - Study's title
-  * `jatos.studyProperties.uuid` - Study's UUID
-  * `jatos.studyProperties.description` - Study's description
-  * `jatos.studyProperties.descriptionHash` - Hash of study's description
-  * `jatos.studyProperties.locked` - Whether the study is locked or not
-  * `jatos.studyProperties.dirName` - Study's dir name in the file system of your JATOS installation
-  * `jatos.studyProperties.groupStudy` - Whether this is a group study or not
-* `jatos.studyJsonInput` - The JSON input you entered in the study's properties.
-* `jatos.studyLength` - Number of component this study has
+### `jatos.studyLength`
+
+Number of component this study has
 
 
-### Original URL query parameters
+## Component variables
 
-* `jatos.urlQueryParameters` - Original query string parameters of the URL that starts the study. It is provided as a JavaScript object. This might be useful to pass on information from outside of JATOS into a study run, e.g. if you want to pass on information like gender and age. However if you know the information beforehand it's easier to put them in the Study's or Component's JSON input. Another example is MTurk which passes on it's worker's ID via a URL query parameter.
+### `jatos.componentProperties`
 
-  Example: One has this link to start a Personal Single Run:
+All the properties (except the JSON input data) you entered for this component
+
+* `jatos.componentProperties.title` - Component's title
+* `jatos.componentProperties.uuid` - Component's UUID
+* `jatos.componentProperties.htmlFilePath` - Path to Component's HTML file in your JATOS installation
+* `jatos.componentProperties.reloadable` - Whether it's reloadable
+
+### `jatos.componentJsonInput`
+
+The JSON input you entered in the component's properties.
+
+### `jatos.componentList`
+
+An array of all components of this study with basic information about each component. For each component it has the `title`, `id`, whether it is `active`, and whether it is `reloadable`.
+
+### `jatos.componentPos`
+
+Position of this component within the study starting with 1 (like shown in the GUI)
+
+
+## Other variables
+
+### `jatos.version`
+
+Current version of the _jatos.js_ library
+
+### `jatos.urlQueryParameters`
+
+Original query string parameters of the URL that starts the study. It is provided as a JavaScript object. This might be useful to pass on information from outside of JATOS into a study run, e.g. if you want to pass on information like gender and age. However if you know the information beforehand it's easier to put them in the Study's or Component's JSON input. Another example is MTurk which passes on it's worker's ID via a URL query parameter.
+
+**Examples**
+
+1. One has this link to start a Personal Single Run:
+
+   `http://localhost:9000/publix/50/start?batchId=47&personalSingleWorkerId=506`
+
+   Now one could add parameters to the URL's query string to pass on external information into the study run. E.g. the following URL would add the parameters 'foo' with the value 'bar' and 'a' with the value '123':
+
+   `http://localhost:9000/publix/50/start?batchId=47&personalSingleWorkerId=506&foo=bar&a=123`
+
+   Then those parameter will be accessible during the study run as `jatos.urlQueryParameters.a` and `jatos.urlQueryParameters.foo`.
+
+1. MTurk uses for its worker ID the URL query parameter 'workerId' and this is accessible via `jatos.urlQueryParameters.workerId`.
+
+
+### `jatos.studySessionData`
+
+The session data variable can be accessed and modified by every component of a study. It's a very convenient way to share data between different components. Whatever is written in this variable will be available in the subsequent components. However, remember that the session data will be deleted after the study is finished (see also [Session Data - Three Types](Session-Data-Three-Types.html)).
+
+### `jatos.channelSendingTimeoutTime`
+
+Time in ms to wait for an answer after sending a message via a channel (batch or group). Set this variable if you want to change the default value (default is 10 s).
+
+**Example**
+
+```javascript
+jatos.channelSendingTimeoutTime = 20000; // Sets channel timeout to 20 seconds
+```
   
-  `http://localhost:9000/publix/50/start?batchId=47&personalSingleWorkerId=506`
+### `jatos.channelHeartbeatInterval`
+
+Waiting time in ms between channel (group or batch) heartbeats (default is 25 s)
+
+**Example**
+
+```javascript
+jatos.channelHeartbeatInterval = 10000; // Sets interval to 10 seconds
+```
   
-  Now one could add parameters to the URL's query string to pass on external information into the study run. E.g. the following URL would add the parameters 'foo' with the value 'bar' and 'a' with the value '123':
+### `jatos.channelHeartbeatTimeoutTime`
+
+Waiting time in ms for JATOS server's answer to a channel heartbeat (default is 10 s)
+
+**Example**
+
+```javascript
+jatos.channelHeartbeatTimeoutTime = 20000; // Sets interval to 20 seconds
+```
   
-  `http://localhost:9000/publix/50/start?batchId=47&personalSingleWorkerId=506&foo=bar&a=123`
+### `jatos.channelClosedCheckInterval`
+
+Waiting time in ms between checking if channels (group or batch) are closed unexpectedly (default is 2 s)
+
+**Example**
+
+```javascript
+jatos.channelClosedCheckInterval = 4000; // Sets interval to 4 seconds
+```
   
-  Then those parameter will be accessible during the study run in `jatos.urlQueryParameters` as `{a: "123", foo: "bar"}`.
+### `jatos.channelOpeningBackoffTimeMin` 
 
-  Example: MTurk uses for its worker ID the URL query parameter 'workerId' and this is accessible via `jatos.urlQueryParameters.workerId`.
+Min waiting time (in ms) between channel reopening attempts (default is 1s for min and 2 min for max). _jatos.js_ uses an _exponential back-off_ retry pattern for the channels.
 
+**Example**
 
-### Component variables
+```javascript
+jatos.channelOpeningBackoffTimeMin = 2000; // Sets interval to 2 seconds
+```
 
-* `jatos.componentProperties` - All the properties (except the JSON input data) you entered for this component
-  * `jatos.componentProperties.title` - Component's title
-  * `jatos.componentProperties.uuid` - Component's UUID
-  * `jatos.componentProperties.htmlFilePath` - Path to Component's HTML file in your JATOS installation
-  * `jatos.componentProperties.reloadable` - Whether it's reloadable
-* `jatos.componentJsonInput` - The JSON input you entered in the component's properties.
-* `jatos.componentList` -  An array of all components of this study with basic information about each component. For each component it has the `title`, `id`, whether it is `active`, and whether it is `reloadable`.
-* `jatos.componentPos` - Position of this component within the study starting with 1 (like shown in the GUI)
+### `jatos.channelOpeningBackoffTimeMax`
 
+Max waiting time (in ms) between channel reopening attempts (default is 1s for min and 2 min for max). _jatos.js_ uses an _exponential back-off_ retry pattern for the channels.
 
-### Study's session data
+**Example**
 
-The session data can be accessed and modified by every component of a study. It's a very convenient way to share data between different components. Whatever is written in this variable will be available in the subsequent components. However, remember that the session data will be deleted after the study is finished (see also [Session Data - Three Types](Session-Data-Three-Types.html)).
+```javascript
+jatos.channelOpeningBackoffTimeMax = 60000; // Sets interval to 1 minute
+```
 
-* `jatos.studySessionData` (writeable)
+### `jatos.httpTimeout`
 
+Time in ms to wait for an answer of an HTTP request by _jatos.js_. Set this variable if you want to change the default value (default is 1 min).
 
-### Other variables
+**Example**
 
-All variables can be set except those labled _read-only_.
-
-* `jatos.version` (_read-only_) - Current version of the jatos.js library
-* `jatos.channelSendingTimeoutTime` - Time in ms to wait for an answer after sending a message via a channel (batch or group). Set this variable if you want to change the default value (default is 10 s).
-
-  ```javascript
-  jatos.channelSendingTimeoutTime = 20000; // Sets channel timeout to 20 seconds
-  ```
+```javascript
+jatos.httpTimeout = 30000; // Sets HTTP timeout to 30 seconds
+```
   
-* `jatos.channelHeartbeatInterval` -  Waiting time in ms between channel (group or batch) heartbeats (default is 25 s)
-  
-  ```javascript
-  jatos.channelHeartbeatInterval = 10000; // Sets interval to 10 seconds
-  ```
-  
-* `jatos.channelHeartbeatTimeoutTime` - Waiting time in ms for JATOS server's answer to a channel heartbeat (default is 10 s)
-  
-  ```javascript
-  jatos.channelHeartbeatTimeoutTime = 20000; // Sets interval to 20 seconds
-  ```
-  
-* `jatos.channelClosedCheckInterval` - Waiting time in ms between checking if channels (group or batch) are closed unexpectedly (default is 2 s)
-  
-  ```javascript
-  jatos.channelClosedCheckInterval = 4000; // Sets interval to 4 seconds
-  ```
-  
-* `jatos.channelOpeningBackoffTimeMin` and `jatos.channelOpeningBackoffTimeMax` - Min and max waiting time (in ms) between channel reopening attempts (default is 1s for min and 2 min for max). jatos.js uses an _exponential back-off_ retry pattern for the channels.
-  
-  ```javascript
-  jatos.channelOpeningBackoffTimeMin = 2000; // Sets interval to 2 seconds
-  jatos.channelOpeningBackoffTimeMax = 60000; // Sets interval to 1 minute
-  ```
+### `jatos.httpRetry`
 
-* `jatos.httpTimeout` - Time in ms to wait for an answer of an HTTP request by jatos.js. Set this variable if you want to change the default value (default is 1 min).
+Some jatos functions (e.g. `jatos.sendResultData`) send an Ajax request to the JATOS server. If this request was not successful (e.g. network problems) _jatos.js_ retries it. With this variable one can change the number of retries. The default is 5. 
 
-  ```javascript
-  jatos.httpTimeout = 30000; // Sets HTTP timeout to 30 seconds
-  ```
+**Example**
+
+```javascript
+jatos.httpRetry = 2; // Attempts 2 retries of failed Ajax requests
+```
   
-* `jatos.httpRetry` - Some jatos functions (e.g. `jatos.sendResultData`) send an Ajax request to the JATOS server. If this request was not successful (e.g. network problems) jatos.js retries it. With this variable one can change the number of retries. The default is 5. 
+### `jatos.httpRetryWait`
 
-  ```javascript
-  jatos.httpRetry = 2; // Attempts 2 retries of failed Ajax requests
-  ```
-  
-* `jatos.httpRetryWait` - Same as `jatos.httpRetry` but this variable defines the waiting time between the retries. The default is 1000 ms.
-  
-  ```javascript
-  jatos.httpRetryWait = 5000; // Sets Ajax retry waiting time to 5 seconds
-  ```
+Same as `jatos.httpRetry` but this variable defines the waiting time between the retries. The default is 1000 ms.
 
-* `jatos.waitSendDataOverlayConfig` - Config of the overlay that is shown when the component ended but there are still data to be sent. See function jatos.showOverlay for config options. By default the text is "Sending data. Please wait." with an image of a spinning wheel.
+**Example**
 
-  ```javascript
-  jatos.waitSendDataOverlayConfig = { text: "Enviando datos. Espere." };
-  ```
+```javascript
+jatos.httpRetryWait = 5000; // Sets Ajax retry waiting time to 5 seconds
+```
+
+### `jatos.waitSendDataOverlayConfig`
+
+Config of the overlay that is shown when the component ended but there are still data to be sent. See function jatos.showOverlay for config options. By default the text is "Sending data. Please wait." with an image of a spinning wheel.
+
+**Example**
+
+```javascript
+jatos.waitSendDataOverlayConfig = { text: "Enviando datos. Espere." };
+```
 
 
-## General jatos.js functions
+
+## General _jatos.js_ functions
 
 ### `jatos.onLoad`
 
-Defines callback function that jatos.js will call when it's finished initialising.
+Defines callback function that _jatos.js_ will call when it's finished initialising.
 
-* _@param {function} callback_ - function to be called after jatos.js' initialization is done
+* _@param {function} callback_ - function to be called after _jatos.js_' initialization is done
 
 **Example**
 
@@ -281,7 +370,7 @@ jatos.removeOverlay()
 
 DEPRECATED - use the specific function's error callback or Promise function instead
 
-Defines a callback function that is to be called in case jatos.js produces an error. 
+Defines a callback function that is to be called in case _jatos.js_ produces an error. 
 
 * _@param {function} callback_ - Function to be called in case of an error
 
@@ -931,29 +1020,35 @@ Additionally you can specify the component position from where the file was uplo
 1. For more real-world examples have a look at the ['Drawing' and the 'Video Recording' examples](Example-Studies.html)
 
 
-## Batch
 
-### Batch variables
+## Batch variables
 
-* `jatos.batchProperties` - All the properties you entered for this batch.
+### `jatos.batchProperties`
+
+All the properties you entered for this batch.
+
   * `jatos.batchProperties.allowedWorkerTypes` - List of worker types that are currently allowed to run in this batch.
-  * `jatos.batchProperties.maxActiveMembers` - How many members this group can have at the same time
-  * `jatos.batchProperties.maxTotalMembers` - How many members this group is allowed to have at the same time
-  * `jatos.batchProperties.maxTotalWorkers` - Total amount of workers this group is allowed to have altogether in this batch
+  * `jatos.batchProperties.maxActiveMembers` - How many members a group can have at the same time
+  * `jatos.batchProperties.maxTotalMembers` - How many members a group is allowed to have at the same time
+  * `jatos.batchProperties.maxTotalWorkers` - Total amount of workers a group is allowed to have altogether in this batch
   * `jatos.batchProperties.title` - Title of this batch
-* `jatos.batchJsonInput` - The JSON input you entered in the batch's properties.
+
+### `jatos.batchJsonInput`
+
+The JSON input you entered in the batch's properties.
 
 
-## Functions to access the Batch Session
+
+## Batch Session functions
 
 The Batch Session is stored in JATOS' database on the server side (see also [Session Data - Three Types](Session-Data-Three-Types.html)). That means that all changes in the Batch Session have to be synchronized between the client and the server. This is done via the batch channel. Therefore all writing functions (`add`, `remove`, `clear`, `replace`, `copy`, `move`, `set`, `setAll`) can be paired with callback functions that will signal  success or failure in the client-server sync. These callback functions can be either passed as parameters to `jatos.batchSession.[function_name]` or via a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-On the other side for all reading functions (`get`, `find`, `getAll`, `test`) there is no need to sync data between client and server, because jatos.js keeps a copy of the Batch Session locally. Therefore all reading functions do not offer callbacks, because there is no risk of failure of synchronization.
+On the other side for all reading functions (`get`, `find`, `getAll`, `test`) there is no need to sync data between client and server, because _jatos.js_ keeps a copy of the Batch Session locally. Therefore all reading functions do not offer callbacks, because there is no risk of failure of synchronization.
 
 Additionally to the reading and writing functions the calback function `jatos.onBatchSession(callback)` offers a way to get notified whenever the Batch Session changes in the JATOS' database regardless of the origin of the change. This way, you can have the client of each worker react to changes in the batch that were done by another worker in the batch. 
 
 Accessing the Batch Session is done via [JSON Patches (RFC 6902)](https://tools.ietf.org/html/rfc6902) and 
-[JSON Pointer (RFC 6901)](https://tools.ietf.org/html/rfc6901). An introduction can be found under [jsonpatch.com](http://jsonpatch.com/). For JSON Patches jatos.js uses the [JSON-Patch](https://github.com/Starcounter-Jack/JSON-Patch) library from Joachim Wester and for JSON Pointers the [jsonpointer.js](https://github.com/alexeykuzmin/jsonpointer.js) library from Alexey Kuzmin.
+[JSON Pointer (RFC 6901)](https://tools.ietf.org/html/rfc6901). An introduction can be found under [jsonpatch.com](http://jsonpatch.com/). For JSON Patches _jatos.js_ uses the [JSON-Patch](https://github.com/Starcounter-Jack/JSON-Patch) library from Joachim Wester and for JSON Pointers the [jsonpointer.js](https://github.com/alexeykuzmin/jsonpointer.js) library from Alexey Kuzmin.
 
 
 ### `jatos.onBatchSession`
@@ -1423,28 +1518,37 @@ jatos.batchSessionVersioning = false; // Turns off versioning
 ```
 
 
-## Group studies
-
-### Group variables
+## Group variables
 
 The group variables are only filled with values if the current study run is a group study.
 
-* `jatos.groupMemberId` - Group member ID is unique for this member (it is actually identical with the study result ID)
-* `jatos.groupResultId` - ID of this group result (It's called group result to be consistent with the study result and the component result - although often it's just called group)
-* `jatos.groupMembers` - List of member IDs of the current members of the group
-* `jatos.groupChannels` - List of member IDs of the currently open group channels
+### `jatos.groupMemberId`
+
+Group member ID is unique for this member (it is actually identical with the study result ID)
+
+### `jatos.groupResultId`
+
+ID of this group result (It's called group result to be consistent with the study result and the component result - although often it's just called group)
+
+### `jatos.groupMembers`
+
+List of member IDs of the current members of the group
+
+### `jatos.groupChannels`
+
+List of member IDs of the currently open group channels
 
 
-## Functions for group studies
+## Group functions
 
 ### `jatos.joinGroup`
 
-Tries to join a group and if it succeeds opens the group channel (which is mostly a WebSocket). Only if the group channel is open one can exchange data with other group members. As the only parameter this function takes an object that consists of several optional callback functions that will be called by jatos.js when certain group events occur. It returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), to signal success or failure in joining.
+Tries to join a group and if it succeeds opens the group channel (which is mostly a WebSocket). Only if the group channel is open one can exchange data with other group members. As the only parameter this function takes an object that consists of several optional callback functions that will be called by _jatos.js_ when certain group events occur. It returns a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise), to signal success or failure in joining.
 
 * _@param {object} callbacks_ - Defining callback functions for group events. All callbacks are optional. These callbacks functions are:
   * `onOpen`: Is called when the group channel is successfully opened
   * `onClose`: Is be called when the group channel is closed
-  * `onError`: Is called if an error during opening of the group channel's WebSocket occurs or if an error is received via the group channel (e.g. the Group Session data couldn't be updated). If this function is not defined jatos.js will try to call the global `onJatosError` function.
+  * `onError`: Is called if an error during opening of the group channel's WebSocket occurs or if an error is received via the group channel (e.g. the Group Session data couldn't be updated). If this function is not defined _jatos.js_ will try to call the global `onJatosError` function.
   * `onMessage(msg)`: Is called if a message from another group member is received. It gets the message as a parameter.
   * `onMemberJoin(memberId)`: Is called when another member (not the worker running this study) joined the group. It gets the group member ID as a parameter.
   * `onMemberOpen(memberId)`: Is called when another member (not the worker running this study) opened a group channel. It gets the group member ID as a parameter.
@@ -1670,10 +1774,10 @@ In difference to the [Batch Session](#functions-to-access-the-batch-session) the
 
 The Group Session is stored in JATOS' database on the server side. That means that all changes in the Group Session have to be synchronized between the client and the server. This is done via the group channel. Therefore all writing functions (`add`, `remove`, `clear`, `replace`, `copy`, `move`, `set`, `setAll`) can be paired with callback functions that will signal  success or failure in the client-server sync. These callback functions can be either passed as parameters to `jatos.groupSession.[function_name]` or via a [Promise](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise).
 
-On the other side for all reading functions (`get`, `find`, `getAll`, `test`) there is no need to sync data between client and server, because jatos.js keeps a copy of the Group Session locally. Therefore all reading functions do not offer callbacks, because there is no risk of failure of synchronization.
+On the other side for all reading functions (`get`, `find`, `getAll`, `test`) there is no need to sync data between client and server, because _jatos.js_ keeps a copy of the Group Session locally. Therefore all reading functions do not offer callbacks, because there is no risk of failure of synchronization.
 
 Accessing the Group Session is done via [JSON Patches (RFC 6902)](https://tools.ietf.org/html/rfc6902) and 
-[JSON Pointer (RFC 6901)](https://tools.ietf.org/html/rfc6901). An introduction can be found under [jsonpatch.com](http://jsonpatch.com/). For JSON Patches jatos.js uses the [JSON-Patch](https://github.com/Starcounter-Jack/JSON-Patch) library from Joachim Wester and for JSON Pointers the [jsonpointer.js](https://github.com/alexeykuzmin/jsonpointer.js) library from Alexey Kuzmin.
+[JSON Pointer (RFC 6901)](https://tools.ietf.org/html/rfc6901). An introduction can be found under [jsonpatch.com](http://jsonpatch.com/). For JSON Patches _jatos.js_ uses the [JSON-Patch](https://github.com/Starcounter-Jack/JSON-Patch) library from Joachim Wester and for JSON Pointers the [jsonpointer.js](https://github.com/alexeykuzmin/jsonpointer.js) library from Alexey Kuzmin.
 
 
 ### `jatos.groupSession.get`
