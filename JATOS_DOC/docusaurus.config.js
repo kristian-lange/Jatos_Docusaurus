@@ -13,7 +13,7 @@ const config = {
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'jatos', // Usually your GitHub org/user name.
+  organizationName: 'JATOS', // Usually your GitHub org/user name.
   projectName: 'jatos_docusaurus', // Usually your repo name.
 
   presets: [
@@ -46,7 +46,7 @@ const config = {
         title: 'JATOS',
         logo: {
           alt: 'JATOS Logo',
-          src: 'img/logo.png',
+          src: 'img/jatos_logo_color.svg'
         },
         items: [
           {
