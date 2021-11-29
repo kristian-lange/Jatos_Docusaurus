@@ -1,4 +1,5 @@
 ---
+title: Write your own Study - Basics and Beyond
 sidebar_position: 2
 ---
 

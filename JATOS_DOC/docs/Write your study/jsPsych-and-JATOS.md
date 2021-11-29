@@ -1,4 +1,5 @@
 ---
+title: jsPsych and JATOS
 sidebar_position: 4
 ---
 

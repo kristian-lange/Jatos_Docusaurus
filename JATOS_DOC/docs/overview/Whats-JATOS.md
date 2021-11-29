@@ -1,5 +1,5 @@
 ---
-title: What is JATOS?
+title: What is JATOS
 sidebar_position: 1
 ---
 

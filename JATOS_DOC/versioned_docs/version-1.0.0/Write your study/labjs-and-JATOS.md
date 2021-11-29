@@ -1,4 +1,5 @@
 ---
+title: lab.js and JATOS
 sidebar_position: 5
 ---
 

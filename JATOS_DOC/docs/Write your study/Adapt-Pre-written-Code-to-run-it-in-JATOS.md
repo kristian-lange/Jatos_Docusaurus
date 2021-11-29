@@ -1,4 +1,5 @@
 ---
+title: Adapt Pre written Code to run it in JATOS (Jatosify)
 sidebar_position: 3
 ---
 

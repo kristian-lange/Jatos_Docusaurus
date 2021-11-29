@@ -1,4 +1,5 @@
 ---
+title: Create a new study
 sidebar_position: 1
 ---
 
