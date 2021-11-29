@@ -1,4 +1,5 @@
 ---
+title: Run your Study with Worker & Batch Manager
 sidebar_position: 2
 ---
 

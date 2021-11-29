@@ -1,4 +1,5 @@
 ---
+title: Session Data - Three Types
 sidebar_position: 1
 ---
 
