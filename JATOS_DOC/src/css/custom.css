@@ -28,7 +28,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 }
 
 .main-wrapper .container {
-  text-align: center;
+  text-align: left;
   padding-top: 6rem;
 }
 

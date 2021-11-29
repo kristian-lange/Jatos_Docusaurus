@@ -1,5 +1,6 @@
 ---
-sidebar_position: 4
+title: JATOS Tryout Server
+sidebar_position: 8
 ---
 
 Cortex is a running JATOS server where you can try out JATOS in the Internet instead of your local computer:

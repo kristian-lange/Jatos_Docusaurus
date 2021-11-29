@@ -1,4 +1,5 @@
 ---
+title: Papers citing JATOS
 sidebar_position: 2
 ---
 
