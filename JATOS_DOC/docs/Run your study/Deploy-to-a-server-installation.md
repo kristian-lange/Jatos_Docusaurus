@@ -1,5 +1,5 @@
 ---
-title: Session Data - Three Types
+title: Deploy to a server installation
 sidebar_position: 1
 ---
 
@@ -16,7 +16,7 @@ Here's a little sketch of the same three steps above
 If you have trouble with the export and you are using a Safari browser have a look into [this issue in our Troubleshooting section](Troubleshooting.html#downloading-a-study--exporting-a-study-fails-eg-in-safari-browsers).
 
 
-### Please note that:
+**Please note that:**
 
 * The two JATOS look almost identical, and you will (basically) only distinguish them on the basis of the URL in the browser. To prevent confusion, we've made it easier: A local JATOS installation has a **black bar** on top. A server installation has a **light-grey bar**. 
 * A **.jzip** file is a normal .zip file. We just changed the name to make this process clearer. (JATOS users got confused and often tried to unzip the file they had downloaded, add HTML files in it, and re-zip it. This will lead to all sorts of problems. Don't do this. 
