@@ -34,6 +34,7 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
 
 .main-wrapper .header-text {
   padding-top: 2rem;
+  text-align: center;
 }
 
 .main-wrapper .header-text h1 {
@@ -44,4 +45,68 @@ html[data-theme='dark'] .docusaurus-highlight-code-line {
   display: flex;
   justify-content: center;
   position: relative;
+}
+
+@font-face {
+  font-family: 'Glyphicons Halflings';
+  src: url('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot');
+  src: url('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/fonts/glyphicons-halflings-regular.eot?#iefix') format('embedded-opentype'),
+  url('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff2') format('woff2'),
+  url('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/fonts/glyphicons-halflings-regular.woff') format('woff'),
+  url('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/fonts/glyphicons-halflings-regular.ttf') format('truetype'),
+  url('//cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/fonts/glyphicons-halflings-regular.svg#glyphicons_halflingsregular') format('svg');
+}
+.glyphicon {
+  position: relative;
+  top: 1px;
+  display: inline-block;
+  font: normal normal 16px/1 'Glyphicons Halflings';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  margin-right: 4px;
+}
+.glyphicon-jatos:before{
+  content:"\e136";
+  font-size: 1.5em;
+  color: #ffcc00;
+}
+.glyphicon-personal-single:before{
+  content:"\e103";
+  font-size: 1.5em;
+  color: #00e600;
+}
+.glyphicon-personal-multiple:before {
+  content:"\e200";
+  font-size: 1.5em;
+  color: #004d00;
+}
+.glyphicon-general-single:before {
+  content:"\e001";
+  font-size: 1.5em;
+  color: #f32222;
+}
+.glyphicon-general-multiple:before {
+  content:"\2a";
+  font-size: 1.5em;
+  color: #830000;
+}
+.glyphicon-mturk-sandbox:before {
+  content:"\e215";
+  font-size: 1.5em;
+  color: #ff55ff;
+}
+.glyphicon-mturk:before {
+  content:"\e215";
+  font-size: 1.5em;
+  color: #af00ef;
+}
+.glyphicon-remove-sign:before {
+  content:"\e083";
+  font-size: 1.5em;
+  color: #b10f0f;
+}
+.glyphicon-ok-sign:before {
+  content:"\e084";
+  font-size: 1.5em;
+  color: #008600;
 }
